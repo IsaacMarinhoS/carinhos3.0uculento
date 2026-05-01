@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Carinho Suculento - Solicite seu Orçamento</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,400&family=Manrope:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,400&family=Manrope:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="./header.css">
+    <link rel="stylesheet" href="./contatos.css">
+
+</head>
+
+<body>
+    <header src="./header.html"></header>
+    <main>
+        <section class="hero">
+            <div class="hero-content"> <span>Fale com o Atelier</span>
+                <h1>Solicite seu Orçamento Personalizado</h1>
+                <p>Cada evento é uma história única. Compartilhe sua visão conosco e transformaremos seu momento
+                    especial com a poesia viva das suculentas.</p>
+            </div>
+            <div class="hero-images">
+                <div class="image-stack"> <img class="main-img"
+                        src="https://images.unsplash.com/photo-1446071103084-c257b5f70672?auto=format&fit=crop&q=80&w=800"
+                        alt="Arranjo de suculentas"> <img class="sub-img"
+                        src="./img/WhatsApp Image 2026-04-23 at 18.08.11.jpeg" alt="Detalhe suculenta"> </div>
+            </div>
+        </section>
+        <div class="bento-grid">
+            <aside class="sidebar">
+                <h3 style="font-size: 1.5rem; color: var(--primary); margin-bottom: 1.5rem;">Nossos Canais</h3> <a
+                    href="#" class="contact-item">
+                    <div class="icon-box"><i class="fa-brands fa-whatsapp"></i></div>
+                    <div class="div-centro">
+                        <p style="font-size: 0.7rem; text-transform: uppercase; color: var(--secondary);">WhatsApp</p>
+                        <p style="font-weight: 600; color: var(--primary);">+55 11 98765-4321</p>
+                    </div>
+                </a> <a href="#" class="contact-item">
+                    <div class="icon-box"><i class="fa-brands fa-instagram"></i></div>
+                    <div class="div-centro">
+                        <p style="font-size: 0.7rem; text-transform: uppercase; color: var(--secondary);">Instagram</p>
+                        <p style="font-weight: 600; color: var(--primary);">@carinhosuculento</p>
+                    </div>
+                </a>
+
+            </aside>
+            <section class="form-card">
+                <form class="form-grid">
+                    <div class="form-group col-span-2"> <label for="nome">Nome Completo</label> <input id="nome"
+                            type="text" placeholder="Como podemos te chamar?"> </div>
+                    <div class="form-group col-span-2"> <label for="email">E-mail para Contato</label> <input id="email"
+                            type="email" placeholder="seuemail@exemplo.com"> </div>
+                    <div class="form-group"> <label for="data">Data do Evento</label> <input id="data" type="date">
+                    </div>
+                    <div class="form-group"> <label for="local">Local do Evento</label> <input id="local" type="text"
+                            placeholder="Cidade ou Espaço"> </div>
+                    <div class="form-group col-span-2"> <label>Serviços de Interesse</label>
+                        <div class="services-grid">
+                            <label class="service-option"> <input type="checkbox" name="servicos" value="Buquê"> <span
+                                    class="material-symbols-outlined">local_florist</span>
+                                <div>Buquê</div>
+                            </label>
+
+                            <label class="service-option"> <input type="checkbox" name="servicos" value="Lembranças">
+                                <span class="material-symbols-outlined">redeem</span>
+                                <div>Lembranças</div>
+                            </label>
+
+                            <label class="service-option"> <input type="checkbox" name="servicos" value="Decoração">
+                                <span class="material-symbols-outlined">festival</span>
+                                <div>Decoração</div>
+                            </label>
+
+                            <label class="service-option"> <input type="checkbox" name="servicos" value="Lapela"> <span
+                                    class="material-symbols-outlined">rebase</span>
+                                <div>Lapela</div>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-span-2" style="margin-top: 2rem;"> <button type="submit" class="submit-btn">Enviar
+                            Minha Solicitação</button>
+                        <p style="text-align: center; font-size: 0.75rem; color: #999; margin-top: 1rem;"> Entraremos em
+                            contato em até 48 horas úteis. </p>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <header id="header"></header>
+
+    <script>
+        fetch('./header.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+
+                // AGORA os elementos existem
+                const toggle = document.getElementById("menu-toggle");
+                const menu = document.getElementById("nav-menu");
+
+                if (toggle && menu) {
+                    toggle.addEventListener("click", () => {
+                        menu.classList.toggle("active");
+                        toggle.classList.toggle("active");
+                        document.body.classList.toggle("menu-open");
+                    });
+                }
+
+                // links ativos
+                const links = document.querySelectorAll(".nav-link");
+                const currentPage = window.location.pathname.split("/").pop() || "home.html";
+
+                links.forEach(link => {
+                    if (link.getAttribute("href").includes(currentPage)) {
+                        link.classList.add("active");
+                    }
+                });
+            });
+    </script>
+
+</body>
